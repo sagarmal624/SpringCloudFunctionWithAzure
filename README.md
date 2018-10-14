@@ -27,6 +27,7 @@ Hello making!
 ## Deploy
 
 ```
+az login
 mvn azure-functions:deploy
 ```
 
