@@ -32,6 +32,6 @@ mvn azure-functions:deploy
 ```
 
 ```
-$ curl -H "Content-Type: text/plain"  https://hellofunction.azurewebsites.net/api/hello -d making -w '\n'
+$ curl -H "Content-Type: text/plain"  https://s1pfunction.azurewebsites.net/api/hello -d making -w '\n'
 Hello making!
 ```

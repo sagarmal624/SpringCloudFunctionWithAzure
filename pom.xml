@@ -14,7 +14,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.0.M4</version>
+        <version>2.1.0.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -23,27 +23,18 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <spring-cloud.version>Greenwich.M1</spring-cloud.version>
-        <functionAppName>hellofunction</functionAppName>
+        <functionAppName>s1pfunction</functionAppName>
         <functionAppRegion>japaneast</functionAppRegion>
-        <functionResourceGroup>hellofunction</functionResourceGroup>
+        <functionResourceGroup>s1pfunction</functionResourceGroup>
         <stagingDirectory>${project.build.directory}/azure-functions/${functionAppName}</stagingDirectory>
         <start-class>com.example.hellofunction.HelloFunctionApplication</start-class>
         <wrapper.version>1.0.15.RELEASE</wrapper.version>
     </properties>
 
     <dependencies>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-function-context</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-function-web</artifactId>
+            <artifactId>spring-cloud-starter-function-web</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -60,8 +51,8 @@
         <dependencies>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
+                <artifactId>spring-cloud-function-dependencies</artifactId>
+                <version>2.0.0.RC1</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -98,7 +89,7 @@
                 <plugin>
                     <groupId>com.microsoft.azure</groupId>
                     <artifactId>azure-functions-maven-plugin</artifactId>
-                    <version>1.0.0-beta-6</version>
+                    <version>1.0.0-beta-7</version>
                     <dependencies>
                         <dependency>
                             <groupId>javax.xml.bind</groupId>
