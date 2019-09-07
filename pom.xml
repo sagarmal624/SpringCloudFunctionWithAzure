@@ -27,7 +27,7 @@
         <functionAppRegion>japaneast</functionAppRegion>
         <functionResourceGroup>s1pfunction</functionResourceGroup>
         <stagingDirectory>${project.build.directory}/azure-functions/${functionAppName}</stagingDirectory>
-        <start-class>com.example.hellofunction.HelloFunctionApplication</start-class>
+        <start-class>com.example.hellofunction.SpringCloudFunctionDemoApplication</start-class>
         <wrapper.version>1.0.15.RELEASE</wrapper.version>
     </properties>
 
