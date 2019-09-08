@@ -2,7 +2,9 @@ package com.example.hellofunction.service;
 
 import com.example.hellofunction.domains.User;
 import com.example.hellofunction.util.ResponseDTO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
@@ -11,6 +13,8 @@ import java.util.List;
 @Service
 public class UserService {
     private static List<User> users = new ArrayList<>();
+    @Autowired
+    private RestTemplate restTemplate;
 
     @PostConstruct
     public void init() {
@@ -76,4 +80,10 @@ public class UserService {
         return responseDTO;
     }
 
+    public ResponseDTO userProfile(String id) {
+        User user = restTemplate.getForEntity("https://jsonplaceholder.typicode.com/todos/" + id, User.class).getBody();
+        ResponseDTO responseDTO = new ResponseDTO();
+        responseDTO.setData(user);
+        return responseDTO;
+    }
 }

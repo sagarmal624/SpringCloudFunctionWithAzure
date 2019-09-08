@@ -3,6 +3,8 @@
 ## Install Azure CLI
 
 ```
+https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-windows?view=azure-cli-latest
+
 brew tap azure/functions
 brew install azure-functions-core-tools
 ```
@@ -20,8 +22,18 @@ mvn azure-functions:run
 ```
 
 ```
-$ curl -H "Content-Type: text/plain"  http://localhost:7071/api/hello -d making -w '\n'
-Hello making!
+Http Functions:
+
+        userDelete: [DELETE] http://localhost:7071/api/userDelete
+
+        userGet: [GET] http://localhost:7071/api/userGet
+
+        userProfile: [GET] http://localhost:7071/api/profile/{id}
+
+        userSave: [POST] http://localhost:7071/api/userSave
+
+        userUpdate: [PUT] http://localhost:7071/api/userUpdate
+
 ```
 
 ## Deploy
@@ -30,8 +42,8 @@ Hello making!
 az login
 mvn azure-functions:deploy
 ```
-
 ```
-$ curl -H "Content-Type: text/plain"  https://s1pfunction.azurewebsites.net/api/hello -d making -w '\n'
-Hello making!
+Put Here Master key of all function in case of AuthorizationLevel=Function
+https://<APP_NAME>.azurewebsites.net/api/<FUNCTION_NAME>?code=<API_KEY>
+
 ```

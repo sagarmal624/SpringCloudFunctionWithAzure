@@ -34,4 +34,8 @@ public class UserFunction {
         return id -> userService.delete(id);
     }
 
+    @Bean("userProfile")
+    public Function<String, ResponseDTO> userProfile() {
+        return id -> userService.userProfile(id);
+    }
 }

@@ -42,4 +42,11 @@ public class UserHandler extends AzureSpringBootRequestHandler<Object, ResponseD
             ExecutionContext context) {
         return handleRequest(request.getBody().get(), context);
     }
+
+    @FunctionName("userProfile")
+    public ResponseDTO profile(
+            @HttpTrigger(name = "userProfileRequest", methods = {HttpMethod.GET}, route = "profile/{id}", authLevel = AuthorizationLevel.ANONYMOUS) HttpRequestMessage request,
+            @BindingName("id") String id, ExecutionContext context) {
+        return handleRequest(id, context);
+    }
 }
